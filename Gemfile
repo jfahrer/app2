@@ -49,4 +49,4 @@ group :development do
   gem 'spring'
 end
 
-gem 'jsonapi-resources'
+gem 'geokit-rails'

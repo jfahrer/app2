@@ -10,4 +10,8 @@ class Event < ActiveRecord::Base
   validates :longitude, presence: true
   validates :user, presence: true
   validates :category, presence: true
+  validates :time, presence: true
+
+  acts_as_mappable default_units: :miles, 
+    lat_column_name: :latitude, lng_column_name: :longitude
 end
