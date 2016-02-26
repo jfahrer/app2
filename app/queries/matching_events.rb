@@ -20,7 +20,7 @@ class MatchingEvents
   end
 
   def call
-    relation.within(@distance, origin: [@longitude, @latitude])
+    relation.within(@distance, origin: [@latitude, @longitude])
       .within_price_class(@price)
       .for_category(@category)
       .starts_before(@starts_before)
