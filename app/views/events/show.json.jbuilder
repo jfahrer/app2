@@ -1,11 +1,13 @@
+json.id @event.id
 json.name @event.name
 json.description @event.description
 json.category @event.category
-json.distance 0
+json.distance @event.distance
 json.latitude @event.latitude
 json.longitude @event.longitude
 json.time @event.time
 json.been_there @event.been_there
+json.location event_path(@event)
 json.host do |json|
   json.name @event.user.name
   json.id @event.user.id

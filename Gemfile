@@ -54,3 +54,4 @@ end
 gem 'pg'
 gem 'geokit-rails'
 gem 'faker'
+gem 'geocoder'

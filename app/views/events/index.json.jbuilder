@@ -2,7 +2,7 @@ json.array! @events do |event|
   json.name event.name
   json.description event.description
   json.category event.category
-  json.distance 0
+  json.distance event.distance(latitude, longitude)
   json.latitude event.latitude
   json.longitude event.longitude
   json.time event.time
