@@ -5,4 +5,14 @@ class User < ActiveRecord::Base
   validates :sex, presence: true
 
   has_many :events
+
+  before_create :setup_auth_token
+
+  private
+
+  def setup_auth_token
+    begin
+      self.auth_token = rand(36**12).to_s(36)
+    end while User.exists?(auth_token: auth_token)
+  end
 end

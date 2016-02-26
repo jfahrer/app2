@@ -4,11 +4,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = User.first.events.new(event_params)
+    @event = current_user.events.new(event_params)
     if @event.save
-      head :no_content
+      render :show
     else
-      render json: @event.errors
+      render json: @event.errors, status: :unprocessable_entity
     end
   end
 

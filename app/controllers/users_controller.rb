@@ -1,31 +1,29 @@
 class UsersController < ApplicationController
 
+  skip_before_action :authenticate_user
   before_action :set_user, only: [:show]
 
-  def index
-    @users = User.all
-    respond_to do |format|
-      format.json { render json: @users }
-    end
-  end
+  #def index
+  #  @users = User.all
+  #end
 
   def create
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.json { render json: @user, status: :created }
+        render :show, status: :created
       else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render json: @user.errors, status: :unprocessable_entity
       end
     end
   end
 
-  def show
-    respond_to do |format|
-      format.json { render json: @user }
-    end
-  end
+  #def show
+  #  respond_to do |format|
+  #    format.json { render json: @user }
+  #  end
+  #end
 
   private
   # Use callbacks to share common setup or constraints between actions.

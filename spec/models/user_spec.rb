@@ -11,4 +11,9 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of :sex }
   it { should validate_numericality_of :age }
   it { should have_many :events }
+
+  it 'creates an auth token for a new user' do
+    user = FactoryGirl.create(:user, auth_token: nil)
+    expect(user.auth_token).not_to be_nil
+  end
 end
