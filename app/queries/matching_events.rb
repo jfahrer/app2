@@ -21,6 +21,8 @@ class MatchingEvents
 
   def call
     relation.within(@distance, origin: [@latitude, @longitude])
+      .where('events.created_at >= :time', time: Time.now - 3.hours)
+      .where(status: Event.statuses[:open])
       .within_price_class(@price)
       .for_category(@category)
       .starts_before(@starts_before)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227214817) do
+ActiveRecord::Schema.define(version: 20160227214819) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -21,14 +21,26 @@ ActiveRecord::Schema.define(version: 20160227214817) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "category"
     t.datetime "time"
     t.boolean  "been_there"
+    t.integer  "status",      default: 0
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "matches", ["event_id"], name: "index_matches_on_event_id"
+  add_index "matches", ["user_id"], name: "index_matches_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "event_id"
