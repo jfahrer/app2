@@ -50,9 +50,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'jsonapi-resources'
-gem 'pusher'
-
 # Production database
 gem 'pg'
 gem 'geokit-rails'
