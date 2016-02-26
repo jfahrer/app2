@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :reviews
   resources :events, only: [:index, :show, :create]
 
@@ -56,6 +57,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  resources :users
 end
