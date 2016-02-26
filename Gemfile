@@ -53,3 +53,4 @@ end
 # Production database
 gem 'pg'
 gem 'geokit-rails'
+gem 'faker'

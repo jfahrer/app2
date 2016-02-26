@@ -8,16 +8,19 @@
 
 
 users = User.create([
+                        {name: 'Michael', email: 'michael@app2.com', age: 34, sex: 'M'},
                         {name: 'Jason', email: 'jason@app2.com', age: 40, sex: 'M'},
                         {name: 'Dave', email: 'dave@app2.com', age: 33, sex: 'M'},
-                        {name: 'May', email: 'may@app2.com', age: 30, sex: 'F'},
-                        {name: 'Joy', email: 'joy@app2.com', age: 24, sex: 'F'},
+                        {name: 'Sarah', email: 'sarah@app2.com', age: 21, sex: 'F'},
+                        {name: 'Michelle', email: 'michelle@app2.com', age: 30, sex: 'F'},
+                        {name: 'Sally', email: 'sally@app2.com', age: 26, sex: 'F'},
                     ])
 
 events = Event.create!([
-                          {name: 'Taco Tuesday', description: 'Best Taco In Town', category: 'food', price: 1, location: 'JJ Tacon', latitude: 37.7833, longitude: -122.4167, user: users[0], time: Time.now}
-                      ])
+                          {name: 'Taco Tuesday', description: 'Best Taco In Town', category: 'food', price: 1, location: 'JJ Tacon', latitude: 37.7833, longitude: -122.4167, user: users[0], time: Time.now, been_there: true},
+                          {name: 'Fun night at Hacker Bar', description: 'Come have fun!!', category: 'clubbing', price: 2, location: 'Hacker Bar', latitude: 37.783, longitude: -122.417, user: users[1], time: Time.now, been_there: true}
+                       ])
 
 reviews = Review.create([
                             {event: events[0], user: users[0], comment: "so much fun!!", stars: 5}
-                        ] )
+                        ])
