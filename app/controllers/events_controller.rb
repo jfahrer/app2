@@ -30,12 +30,12 @@ class EventsController < ApplicationController
   end
 
   def latitude
-    params[:filters][:latitude]
+    params[:filters].try(:[], :latitude)
   end
   helper_method :latitude
 
   def longitude
-    params[:filters][:longitude]
+    params[:filters].try(:[], :longitude)
   end
   helper_method :longitude
 end
