@@ -14,4 +14,6 @@ RSpec.describe Event, type: :model do
   it { should validate_presence_of :latitude }
   it { should validate_presence_of :longitude }
   it { should validate_presence_of :user }
+  it { should validate_presence_of :category }
+  it { should validate_presence_of :time }
 end

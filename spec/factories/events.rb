@@ -7,5 +7,6 @@ FactoryGirl.define do
     latitude (0..100).to_a.sample
     longitude (0..100).to_a.sample
     association(:user)
+    category "entertainment"
   end
 end

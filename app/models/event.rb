@@ -9,5 +9,5 @@ class Event < ActiveRecord::Base
   validates :latitude, presence: true
   validates :longitude, presence: true
   validates :user, presence: true
-
+  validates :category, presence: true
 end
