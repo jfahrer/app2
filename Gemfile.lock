@@ -80,6 +80,7 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.1)
     pusher (0.17.0)
       httpclient (~> 2.7)
       multi_json (~> 1.0)
@@ -178,6 +179,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   pusher
   rails (= 4.2.5.1)
   rspec-rails
