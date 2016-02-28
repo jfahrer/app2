@@ -7,8 +7,10 @@ json.array! @events do |event|
   json.longitude event.longitude
   json.time event.time
   json.been_there event.been_there
-  json.host do |json|
-    json.name event.user.name
-    json.id event.user.id
-  end
+  json.host_id event.user.name
+  json.host_name event.user.id
+  # json.host do |json|
+  #   json.name event.user.name
+  #   json.id event.user.id
+  # end
 end
