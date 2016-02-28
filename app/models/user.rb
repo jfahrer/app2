@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :sex, presence: true
 
   has_many :events
+  has_many :matches
 
   before_create :setup_auth_token
 

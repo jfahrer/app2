@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   resources :reviews
-  resources :events, only: [:index, :show, :create]
+  resources :events, only: [:index, :show, :create] do
+    resources :matches, only: [:index, :show, :create, :update, :show]
+  end
 
   get 'users/:id/stars' => 'users#stars'
 
