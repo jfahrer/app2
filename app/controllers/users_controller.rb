@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   #end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new
     # Fake it!!
     @user.name = Faker::Name.name
     @user.email = Faker::Internet.email

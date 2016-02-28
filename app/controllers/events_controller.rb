@@ -28,4 +28,14 @@ class EventsController < ApplicationController
                                    :starts_after, :starts_before, :min_age, :max_age, :sex)
       .to_h.symbolize_keys
   end
+
+  def latitude
+    params[:filters].try(:[], :latitude)
+  end
+  helper_method :latitude
+
+  def longitude
+    params[:filters].try(:[], :longitude)
+  end
+  helper_method :longitude
 end

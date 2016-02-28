@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 *.swp
-.byebug_history
+/.byebug_history

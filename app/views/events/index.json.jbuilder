@@ -13,4 +13,5 @@ json.array! @events do |event|
   #   json.name event.user.name
   #   json.id event.user.id
   # end
+  json.partial! 'details', event: event
 end

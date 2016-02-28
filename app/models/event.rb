@@ -18,4 +18,9 @@ class Event < ActiveRecord::Base
     lat_column_name: :latitude, lng_column_name: :longitude
 
   enum status: [:open, :accepted]
+
+  def distance(lat, lng)
+    return 0 if lat.blank? or lng.blank?
+    Geocoder::Calculations.distance_between([latitude, longitude], [lat, lng])
+  end
 end
