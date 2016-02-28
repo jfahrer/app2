@@ -17,8 +17,8 @@
 #                     ])
 
 events = Event.create!([
-                          {name: 'Happy Hour', description: 'For hackers!!', category: 'food', price: 1, location: 'Philz Coffee', latitude: 37.8117863, longitude: -122.4559906, user:7, time: Time.now, been_there: true},
-                          {name: 'Bike at the Golden Gate Park', description: 'Bring your bike and ride with me!!', category: 'outdoors', price: 1, location: 'Golden Gate Park', latitude: 37.811776, longitude: -122.4561623, user: 8, time: Time.now, been_there: true}
+                          {name: 'Happy Hour', description: 'For hackers!!', category: 'food', price: 1, location: 'Philz Coffee', latitude: 37.8117863, longitude: -122.4559906, user_id:7, time: Time.now, been_there: true},
+                          {name: 'Bike at the Golden Gate Park', description: 'Bring your bike and ride with me!!', category: 'outdoors', price: 1, location: 'Golden Gate Park', latitude: 37.811776, longitude: -122.4561623, user_id: 8, time: Time.now, been_there: true}
                        ])
 #
 # reviews = Review.create([
