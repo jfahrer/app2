@@ -60,4 +60,6 @@ Rails.application.routes.draw do
   resources :users
   get 'hello_world/index'
   post 'hello_world/hello_world'
+
+  get 'users/:id/stars' => 'users#stars'
 end

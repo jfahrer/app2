@@ -27,6 +27,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def stars
+    reviews = Review.where(user: @user)
+    stars = []
+    reviews.each { |r| stars << r.stars if r.stars}
+    avg_stars = stars.sum / stars.size.to_f
+    respond_to do |format|
+      format.json { render json: avg_stars }
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
