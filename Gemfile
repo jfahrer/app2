@@ -57,3 +57,4 @@ gem 'pusher'
 gem 'pg'
 
 gem 'geokit-rails'
+gem 'faker'
