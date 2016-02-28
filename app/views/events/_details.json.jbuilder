@@ -8,6 +8,7 @@ json.time event.time
 json.been_there event.been_there
 json.status event.status
 json.location event_path(event)
+json.uber_price_estimate event.uber_price_estimate(latitude, longitude)
 json.matches event_matches_path(event)
 json.host do |json|
   json.partial! 'users/details', user: event.user

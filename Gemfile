@@ -55,5 +55,7 @@ gem 'pg'
 
 gem 'geokit-rails'
 gem 'faker'
-gem 'faker'
 gem 'geocoder'
+
+gem 'uber-ruby', require: 'uber'
+

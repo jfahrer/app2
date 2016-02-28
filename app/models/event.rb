@@ -23,4 +23,20 @@ class Event < ActiveRecord::Base
     return 0 if lat.blank? or lng.blank?
     Geocoder::Calculations.distance_between([latitude, longitude], [lat, lng])
   end
+
+  def uber_price_estimate(slat, slng)
+    return 0 if slat.blank? or slng.blank?
+
+    client = Uber::Client.new do |config|
+      config.server_token  = "FPD_gvNtB-ow-7KIseaf4iGp7J92027vKhKS9Zqg"
+      config.client_id     = "irCI3msdUZcgGwjAGHzgz8DYxcPwTn89"
+      config.client_secret = "FLQYZsNMUkc13Mb-2Wdx2689WTIj3_wFyWCpltLw"
+      # config.bearer_token  = "USER_ACCESS_TOKEN"
+    end
+
+    price = client.price_estimations(start_latitude: slat, start_longitude:  slng,
+                                     end_latitude: self.latitude, end_longitude: self.longitude)
+    price.first.estimate
+
+  end
 end
