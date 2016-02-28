@@ -58,4 +58,6 @@ Rails.application.routes.draw do
   #   end
 
   resources :users
+  get 'hello_world/index'
+  post 'hello_world/hello_world'
 end
