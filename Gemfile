@@ -36,6 +36,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'spring-commands-rspec', group: :development
 end
 
 group :development do
@@ -54,3 +55,4 @@ gem 'pusher'
 # Production database
 gem 'pg'
 
+gem 'geokit-rails'
