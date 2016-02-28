@@ -8,5 +8,6 @@ FactoryGirl.define do
     longitude (0..100).to_a.sample
     association(:user)
     category "entertainment"
+    time Time.now + 1.hour
   end
 end

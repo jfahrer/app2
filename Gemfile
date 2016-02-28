@@ -55,3 +55,4 @@ gem 'pusher'
 
 # Production database
 gem 'pg'
+gem 'geokit-rails'
