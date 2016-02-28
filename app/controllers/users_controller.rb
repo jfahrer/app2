@@ -3,16 +3,27 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user
   before_action :set_user, only: [:show, :stars]
 
+  @@sex = ['F', 'M']
+  @@avatar = {
+      'F' => "#{ActionController::Base.helpers.image_url('sarah.png')}",
+      'M' => "#{ActionController::Base.helpers.image_url('michael.png')}"
+  }
   #def index
   #  @users = User.all
   #end
 
   def create
     @user = User.new(user_params)
+    # Fake it!!
+    @user.name = Faker::Name.name
+    @user.email = Faker::Internet.email
+    @user.age = rand(18..45)
+    @user.sex = @@sex[rand(0..1)]
+    @user.avatar = request.base_url+ @@avatar[@user.sex]
 
     respond_to do |format|
       if @user.save
-        render :show, status: :created
+        format.json { render json: @user, status: :created }
       else
         render json: @user.errors, status: :unprocessable_entity
       end
