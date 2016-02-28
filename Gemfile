@@ -50,6 +50,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'jsonapi-resources'
 gem 'pusher'
 
 # Production database

@@ -186,6 +186,7 @@ DEPENDENCIES
   geokit-rails
   jbuilder (~> 2.0)
   jquery-rails
+  jsonapi-resources
   pg
   pusher
   rails (= 4.2.5.1)

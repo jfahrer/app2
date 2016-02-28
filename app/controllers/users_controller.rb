@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   skip_before_action :authenticate_user
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :stars]
 
   #def index
   #  @users = User.all
@@ -24,6 +24,17 @@ class UsersController < ApplicationController
   #    format.json { render json: @user }
   #  end
   #end
+
+  def stars
+    reviews = Review.where(user: @user)
+    puts reviews
+    stars = []
+    reviews.each { |r| stars << r.stars if r.stars}
+    avg_stars = stars.sum / stars.size.to_f unless stars.empty?
+    respond_to do |format|
+      format.json { render json: avg_stars }
+    end
+  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
